@@ -1,0 +1,3 @@
+[submodule "bnblordkm"]
+	path = bnblordkm
+	url = git@git.assembla.com:bnblordkm.git

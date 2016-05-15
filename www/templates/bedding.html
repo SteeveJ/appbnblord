@@ -1,0 +1,42 @@
+<ion-view view-title="Détails Mission">
+  <div class="bar bar-header bar-balanced">
+    <h1 class="title"><a class="ion-chevron-left icon-left" ui-sref="app.missionDetail({id: vm.mission.id})"></a> Traveller is not Arrived</h1>
+  </div>
+  <div class="content detail">
+
+    <label for="doubleBedDuvetCover">Double bed duvet cover</label>
+    <select id="doubleBedDuvetCover">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="simpleBedDuvetCover">Simple bed duvet cover</label>
+    <select id="simpleBedDuvetCover">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="doubleBedCover">Double bed cover</label>
+    <select id="doubleBedCover">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="simpleBedCover">Simple bed Cover</label>
+    <select id="simpleBedCover">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="pillowcase">Pillowcase</label>
+    <select id="pillowcase">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="bathTowel">bath towel</label>
+    <select id="bathTowel">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="bathMat">Bath Mat</label>
+    <select id="bathMat">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select></br>
+    <label for="kitchenTowel">kitchen towel</label>
+    <select id="kitchenTowel">
+      <option ng-repeat="n in [1,2,3,4,5,6,7,8,9]" value="{{n}}">{{n}}</option>
+    </select>
+    </br>
+    <button ng-click="vm.bedding()">Validate</button>
+  </div>
+</ion-view>

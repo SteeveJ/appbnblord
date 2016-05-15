@@ -1,0 +1,21 @@
+<div class="container">
+  <md-button ui-sref="app.missionDetail({id: vm.mission.id})">
+    <md-icon md-svg-icon="../img/arrow.svg"></md-icon>
+    Return to home
+  </md-button>
+  <h2 class="title">Traveller Arrived</h2>
+  <p>Passenger have  arrived and they have received key</p>
+  <md-input-container class="md-block">
+    <label>I recommend following restaurant</label>
+    <textarea ng-model="vm.restaurant" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label>I recommend following event</label>
+    <textarea ng-model="vm.event" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label>Comment (optional)</label>
+    <textarea ng-model="vm.comment" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+  <md-button class="md-raised md-primary" ng-click="vm.finish(vm.mission.id, 3)">End mission</md-button>
+</div>

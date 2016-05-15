@@ -1,0 +1,35 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-menu>
+        <md-button aria-label="Open Settings interactions menu" class="md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
+          <md-icon md-svg-icon="../img/burger_menu.svg"></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ui-sref="app.profile">
+              Home
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="vm.disconnect()">
+              Logout
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <md-button class="md-icon-button" aria-label="Settings">
+
+      </md-button>
+      <h2>
+        <span>BNBLORD</span>
+      </h2>
+      <span flex></span>
+
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="../img/logout.svg" ng-click="vm.disconnect()"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <ion-nav-view name="menuContent" class="scroll-content ionic-scroll"></ion-nav-view>
+</ion-side-menus>

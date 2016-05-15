@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 class="title">Profile</h2>
+  <p><span class="blue">Lastname :</span> {{vm.user.user.last_name}}</p>
+  <p><span class="blue">Firstname :</span> {{vm.user.user.first_name}}</p>
+  <p><span class="blue">Email :</span> {{vm.user.user.email}}</p>
+  <p><span class="blue">Phone number :</span> {{vm.user.numero_telephone_agent}}</p>
+  <div ng-if="vm.user.bool_formation == true">
+    <h2 class="title red">In formation</h2>
+  </div>
+  <h2 class="title">Mission</h2>
+</div>
+  <md-table-container>
+    <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+      <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>Date</span></th>
+        <th md-column md-numeric md-order-by=""><span>Start/End time</span></th>
+        <th md-column md-numeric>Metro</th>
+        <th md-column md-numeric>Status</th>
+        <th md-column md-numeric>Action</th>
+      </tr>
+      </thead>
+      <tbody md-body>
+      <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="items in vm.mymission">
+        <td md-cell>{{ items.mission_begin_date | date:'dd/MM/yyyy' }}</td>
+        <td md-cell>{{ items.mission_begin_date | date:'HH:mm' }} - {{ items.mission_end_date | date:'HH:mm' }}</td>
+        <td md-cell>{{items.mission_reservation.appartement.metro_station}}</td>
+        <td md-cell>
+          <span ng-if="vm.dateNow(items.mission_begin_date) == true" flex="100">
+            <h3 class="today">Today</h3>
+          </span>
+          <span ng-if="vm.dateNow(items.mission_begin_date) == false" flex="100">
+            <h3 class="today">This is not the days</h3>
+          </span>
+        </td>
+        <td md-cell><a ui-sref="app.missionDetail({id: items.id})">see the details</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+
+</ion-view>

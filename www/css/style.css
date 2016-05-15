@@ -1,0 +1,67 @@
+md-content{
+  height: 100vh;
+  background-color: #EEEEEE;
+}
+.form-login{
+  padding: 40px;
+}
+.form-input{
+  width: 100%;
+}
+.logo-login{
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container{
+  padding: 10px;
+}
+.title, .text-center{
+  text-align: center;
+}
+.text-center{
+  text-decoration: underline;
+}
+.blue{
+  color: #0a9dc7;
+}
+.orange{
+  color: #FF9100;
+}
+.padding-list{
+  padding-left: 5%;
+}
+md-table-container{
+  margin-bottom: 20px;
+}
+
+.about, .appartment, .traveller, .checkin{
+  background-color: #FF9100;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.about_mission, .appartment_mission, .traveller_mission{
+  padding: 2%;
+  background-color: #FFD180;
+}
+
+@media screen and (max-width: 640px){
+  .logo-login{
+    height: 180px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .logo-login{
+    height: 130px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .logo-login{
+    height: 80px;
+    width: 100px;
+  }
+}

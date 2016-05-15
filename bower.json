@@ -1,0 +1,15 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "a0-angular-storage": "^0.0.13",
+    "angular-jwt": "^0.0.9",
+    "angular-material": "^1.0.8",
+    "angular-animate": "^1.5.5",
+    "angular-material-data-table": "^0.10.9"
+  }
+}

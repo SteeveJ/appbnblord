@@ -1,0 +1,19 @@
+<ion-view view-title="Détails Mission">
+  <div class="bar bar-header bar-balanced">
+    <h1 class="title">Image Ref</h1>
+  </div>
+  <div class="content detail">
+      <img class="" width="100%" src="{{ vm.aws+vm.img.images}}" alt="">
+      <div ng-if="vm.response == false">
+        <p>{{vm.return}}</p>
+      </div>
+      <button class="button button-full " ng-click="vm.takePhoto()">{{ vm.btn_take }}</button>
+      <div ng-if="vm.send_Boolean == true">
+          <button class="button button-full " ng-click="vm.send(vm.photo)">send Picture</button>
+      </div>
+      <div class="content">
+          <img width="100%" src="data:image/jpeg;base64,{{ vm.photo.uri }}">
+      </div>
+
+  </div>
+</ion-view>

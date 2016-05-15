@@ -1,0 +1,128 @@
+<div class="container">
+  <md-button ui-sref="app.profile">
+    <md-icon md-svg-icon="../img/arrow.svg"></md-icon>
+    Return to home
+  </md-button>
+  <h2 class="title">Mission</h2>
+  <p ng-if="vm.mission.task_checkout == true">
+    This mission is a Checkout. In addition to the cleaning, please ensure to raise any concerns
+    or broken items to bnblord through the application.
+  </p>
+  <p ng-if="vm.mission.task_welcome == true">
+    This mission is a Check-in. You should get in touch with the traveller(s)
+    one hour before they are meant to arrive at the property to ensure that you are there
+    half an hour before them.<br>
+    Once at the property, do a brief checkout, clear out any dust/ quickly hoover if required. <br>
+    You should also get familiar with the place to be ready to answer any guest question.
+  </p>
+</div>
+<div class="about" ng-click="vm.about()">
+  <h2 class="title">About</h2>
+  <div class="about_mission" ng-hide="vm.bool_about" ng-show="vm.bool_about">
+    <div ng-if="vm.mission.task_menage_final == true">
+      <p class="blue">Landlord return</p>
+      <p class="blue">Bedding : </p>
+      <p ng-if="vm.litterie.used_double_coach != 0 || vm.litterie.used_double_bed != 0">
+        <span class="blue">Double bed cover :</span> {{vm.litterie.used_double_coach+vm.litterie.used_double_bed}}
+      </p>
+      <p ng-if="vm.litterie.used_simple_bed != 0 || vm.litterie.used_simple_coach != 0">
+        <span class="blue">Simple bed cover :</span> {{vm.litterie.used_simple_coach+vm.litterie.used_simple_bed}}
+      </p>
+      <p ng-if="vm.pillowcase > 0">
+        <span class="blue">Pillowcase :</span> {{vm.pillowcase}}
+      </p>
+    </div>
+
+    <p><span class="blue">Start/End time : </span> {{vm.mission.mission_begin_date|date:'HH:mm'}} - {{vm.mission.mission_end_date|date:'HH:mm'}}</p>
+    <p><span class="blue">Paid : </span>{{vm.mission.mission_paid}} €</p>
+
+    <div ng-if="vm.mission.task_checkout == true">
+      <p ng-if="vm.mission.task_menage_final == false">About checkout : {{vm.appt.indication_checkout}}</p>
+      <p>About menage : {{vm.appt.indication_menage}}</p>
+      <p class="blue">Bedding : </p>
+      <p ng-if="vm.litterie.used_double_coach != 0 || vm.litterie.used_double_bed != 0">
+        <span class="blue">Double bed cover :</span> {{vm.litterie.used_double_coach+vm.litterie.used_double_bed}}
+      </p>
+      <p ng-if="vm.litterie.used_simple_bed != 0 || vm.litterie.used_simple_coach != 0">
+        <span class="blue">Simple bed cover :</span> {{vm.litterie.used_simple_coach+vm.litterie.used_simple_bed}}
+      </p>
+      <p ng-if="vm.pillowcase > 0">
+        <span class="blue">Pillowcase :</span> {{vm.pillowcase}}
+      </p>
+    </div>
+    <div ng-if="vm.mission.task_welcome == true">
+      <p><span class="blue">Indication Home : </span>{{vm.appt.indication_welcome}}</p>
+      <p><span class="blue">Indication of the key deposit : </span>{{vm.appt.indication_depot_clef}}</p>
+    </div>
+  </div>
+</div>
+<div class="appartment" ng-click="vm.appartment()">
+  <h2 class="title">Appartment</h2>
+  <div class="appartment_mission" ng-hide="vm.bool_appt" ng-show="vm.bool_appt">
+    <p><span class="blue">Adress : </span>{{vm.mission.mission_reservation.appartement.addresse}}</p>
+    <p><span class="blue">Metro : </span> {{vm.mission.mission_reservation.appartement.metro_station}}</p>
+    <p ng-if="vm.mission.mission_reservation.appartement.code_immeuble_1 != ''">
+      <span class="blue">Code 1 : </span> {{vm.mission.mission_reservation.appartement.code_immeuble_1}}
+    </p>
+    <p ng-if="vm.mission.mission_reservation.appartement.code_immeuble_2 != ''">
+      <span class="blue">code 2 :</span> {{vm.mission.mission_reservation.appartement.code_immeuble_2}}
+    </p>
+    <p>
+      <span class="blue">About Location : </span>{{vm.appt.info_location}}
+    </p>
+    <p class="text-center">
+      WIFI
+    </p>
+    <p><span class="blue">Id : </span>{{vm.mission.mission_reservation.appartement.nom_wifi}}</p>
+    <p><span class="blue">Password :</span> {{vm.mission.mission_reservation.appartement.wifi_code}}</p>
+  </div>
+</div>
+<div class="traveller" ng-click="vm.traveller()" ng-if="vm.mission.task_welcome == true">
+  <h2 class="title">Traveller</h2>
+  <div class="traveller_mission" ng-hide="vm.bool_traveller" ng-show="vm.bool_traveller">
+    <p ng-if="vm.resa.nom_voyageur != ''">
+      <span class="blue">Lastname</span> {{vm.resa.nom_voyageur}}
+    </p>
+    <p ng-if="vm.resa.prenom_voyageur != ''">
+      <span class="blue">Fistname : </span>{{vm.resa.prenom_voyageur}}
+    </p>
+    <p class="blue">Language(s) :</p>
+    <ul ng-if="vm.resa.langue_voyageur.length != 0">
+      <li ng-repeat="languages in vm.resa.langue_voyageur">
+        {{languages.nom_langue}}
+      </li>
+    </ul>
+    <p ng-if="vm.resa.numero_telephone_voyageur != ''">
+      <span class="blue">Phone number : </span>{{vm.resa.numero_telephone_voyageur}}
+    </p>
+    <p ng-if="vm.resa.heure_arrivee != '' && vm.mission.task_welcome == true">
+      <span class="blue">Time of arrival : </span>{{vm.resa.heure_arrivee|date:'HH:mm'}}
+    </p>
+    <p ng-if="vm.resa.heure_depart != ''  && vm.mission.task_checkout == true">{{vm.resa.heure_arrivee|date:'HH:mm'}}</p>
+  </div>
+</div>
+<div class="checkin" ng-click="vm.checkin()" ng-if="vm.mission.task_welcome == true">
+  <h2 class="title">Checkin</h2>
+  <div class="checkin_mission" ng-show="vm.bool_checkin" ng-hide="vm.bool_checkin">
+    <md-button class="md-raised md-primary" ui-sref="app.travellerArrived({id: vm.mission.id})">Traveller arrived</md-button>
+    <md-button class="md-raised md-primary" ui-sref="app.travellerNotArrived({id: vm.mission.id})">Traveller not arrived</md-button>
+  </div>
+</div>
+
+    <!--<div class="menage" ng-if="vm.mission.task_checkout == true || vm.mission.task_menage_final == true">-->
+
+      <!--<button ui-sref="app.delivery({id: vm.mission.id})">Delivery</button>-->
+      <!--<button ui-sref="app.bedding({id: vm.mission.id})">Bedding</button>-->
+      <!--&lt;!&ndash;TODO: add and remove item(s) an array &ndash;&gt;-->
+      <!--&lt;!&ndash;<p>Specify the defaulting cleaning tools or missing :</p>-->
+      <!--<input type="text" ng-model="specify_defaulting_missing" placeholder="eg. missing vacuum cleaner">-->
+      <!--<button ng-click="vm.add(specify_defaulting_missing)">add</button>&ndash;&gt;-->
+      <!--<p>Keys of travelers</p>-->
+      <!--<input type="checkbox" ng-click="vm.endMission('finished')"> I have the key-->
+      <!--<input type="checkbox" ng-click="vm.endMission('finished')">I not have the key-->
+    <!--</div>-->
+    <!--<div class="inventory">-->
+      <!--<button ui-sref="app.inventory({id: vm.mission.id})">Inventory</button>-->
+      <!--<button ui-sref="app.problem({id: vm.mission.id})">Report a problem</button>-->
+    <!--</div>-->
+    <!--<button ng-if="vm.end_mission == true" ng-click="vm.finish(vm.mission.id, 1)">I have finish the mission</button>-->

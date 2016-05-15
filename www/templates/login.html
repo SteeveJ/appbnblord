@@ -1,0 +1,13 @@
+<img src="../img/bnblordlogo.png" alt="BNBLORD" class="logo-login">
+  <div class="form-login">
+    <p class="alert">{{ vm.message }}</p>
+    <md-input-container class="form-input">
+      <label >Username</label>
+      <input ng-model="username">
+    </md-input-container>
+    <md-input-container class="form-input">
+      <label>Password</label>
+      <input ng-model="password" type="password">
+    </md-input-container>
+    <md-button class="btn1" ng-click="login(username, password)"> Connexion </md-button>
+  </div>
