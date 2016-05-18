@@ -10,11 +10,11 @@
   <h2 class="title">Mission</h2>
 </div>
   <md-table-container>
-    <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
-      <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+    <table md-table md-row-select multiple>
+      <thead md-head>
       <tr md-row>
-        <th md-column md-order-by="nameToLower"><span>Date</span></th>
-        <th md-column md-numeric md-order-by=""><span>Start/End time</span></th>
+        <th md-column md-numeric><span>Date</span></th>
+        <th md-column md-numeric><span>Start/End time</span></th>
         <th md-column md-numeric>Metro</th>
         <th md-column md-numeric>Status</th>
         <th md-column md-numeric>Action</th>
@@ -30,7 +30,7 @@
             <h3 class="today">Today</h3>
           </span>
           <span ng-if="vm.dateNow(items.mission_begin_date) == false" flex="100">
-            <h3 class="today">This is not the days</h3>
+            <h3 class="today">This is not today</h3>
           </span>
         </td>
         <td md-cell><a ui-sref="app.missionDetail({id: items.id})">see the details</a></td>

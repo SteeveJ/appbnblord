@@ -1,7 +1,7 @@
 var services = angular.module('servicesJWT', [])
 
 .factory('JWTServ', function($http, store, $state, jwtHelper) {
-  var api = 'http://192.168.0.23:8000';
+  var api = 'http://192.168.0.26:8000';
   store.set('api', api);
   var jwt = {};
 

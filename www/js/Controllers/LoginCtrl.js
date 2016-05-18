@@ -17,14 +17,13 @@ angular.module('login.controllers', [])
      * @param password
      *
      **/
-    $scope.login = function(username, password){
+    $scope.login = function(){
       var payload = {
-        'username':username,
-        'password':password
+        'username':vm.username,
+        'password':vm.password
       };
       loginServ.connect(payload);
       var stopInterval;
-      console.log(store.get('jwt'))
       var message = $interval(function(){
         // on affiche l'erreur
         vm.message = loginServ.message;

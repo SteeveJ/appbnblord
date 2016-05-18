@@ -1,6 +1,6 @@
 <div class="container">
   <md-button ui-sref="app.profile">
-    <md-icon md-svg-icon="../img/arrow.svg"></md-icon>
+    <md-icon md-svg-icon="img/arrow.svg"></md-icon>
     Return to home
   </md-button>
   <h2 class="title">Mission</h2>
@@ -11,7 +11,7 @@
   <p ng-if="vm.mission.task_welcome == true">
     This mission is a Check-in. You should get in touch with the traveller(s)
     one hour before they are meant to arrive at the property to ensure that you are there
-    half an hour before them.<br>
+     an hour before them.<br>
     Once at the property, do a brief checkout, clear out any dust/ quickly hoover if required. <br>
     You should also get familiar with the place to be ready to answer any guest question.
   </p>
@@ -57,7 +57,7 @@
   </div>
 </div>
 <div class="appartment" ng-click="vm.appartment()">
-  <h2 class="title">Appartment</h2>
+  <h2 class="title">Apartment</h2>
   <div class="appartment_mission" ng-hide="vm.bool_appt" ng-show="vm.bool_appt">
     <p><span class="blue">Adress : </span>{{vm.mission.mission_reservation.appartement.addresse}}</p>
     <p><span class="blue">Metro : </span> {{vm.mission.mission_reservation.appartement.metro_station}}</p>
@@ -109,20 +109,20 @@
   </div>
 </div>
 
-    <!--<div class="menage" ng-if="vm.mission.task_checkout == true || vm.mission.task_menage_final == true">-->
+    <div class="menage" ng-if="vm.mission.task_checkout == true || vm.mission.task_menage_final == true">
 
-      <!--<button ui-sref="app.delivery({id: vm.mission.id})">Delivery</button>-->
-      <!--<button ui-sref="app.bedding({id: vm.mission.id})">Bedding</button>-->
-      <!--&lt;!&ndash;TODO: add and remove item(s) an array &ndash;&gt;-->
-      <!--&lt;!&ndash;<p>Specify the defaulting cleaning tools or missing :</p>-->
-      <!--<input type="text" ng-model="specify_defaulting_missing" placeholder="eg. missing vacuum cleaner">-->
-      <!--<button ng-click="vm.add(specify_defaulting_missing)">add</button>&ndash;&gt;-->
-      <!--<p>Keys of travelers</p>-->
-      <!--<input type="checkbox" ng-click="vm.endMission('finished')"> I have the key-->
-      <!--<input type="checkbox" ng-click="vm.endMission('finished')">I not have the key-->
-    <!--</div>-->
-    <!--<div class="inventory">-->
-      <!--<button ui-sref="app.inventory({id: vm.mission.id})">Inventory</button>-->
-      <!--<button ui-sref="app.problem({id: vm.mission.id})">Report a problem</button>-->
-    <!--</div>-->
-    <!--<button ng-if="vm.end_mission == true" ng-click="vm.finish(vm.mission.id, 1)">I have finish the mission</button>-->
+      <button ui-sref="app.delivery({id: vm.mission.id})">Delivery</button>
+      <button ui-sref="app.bedding({id: vm.mission.id})">Bedding</button>
+      <!--TODO: add and remove item(s) an array -->
+      <!--<p>Specify the defaulting cleaning tools or missing :</p>
+      <input type="text" ng-model="specify_defaulting_missing" placeholder="eg. missing vacuum cleaner">
+      <button ng-click="vm.add(specify_defaulting_missing)">add</button>-->
+      <p>Keys of travelers</p>
+      <input type="checkbox" ng-click="vm.endMission('finished')"> I have the key
+      <input type="checkbox" ng-click="vm.endMission('finished')">I not have the key
+    </div>
+    <div class="inventory">
+      <button ui-sref="app.inventory({id: vm.mission.id})">Inventory</button>
+      <button ui-sref="app.problem({id: vm.mission.id})">Report a problem</button>
+    </div>
+    <button ng-if="vm.end_mission == true" ng-click="vm.finish(vm.mission.id, 1)">I have finish the mission</button>

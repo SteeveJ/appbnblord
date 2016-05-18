@@ -8,25 +8,20 @@ angular.module('TakeAPhoto.controllers', [])
 
 
     vm.takePhoto = function () {
-        var options = {
-          quality: 75,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.CAMERA,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 1024,
-          targetHeight: 1024,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false,
-          correctOrientation:true
-        };
-        vm.debug.option = options;
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-          vm.src = "data:image/jpeg;base64," + imageData;
+      navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 75,
+        targetWidth: 320,
+        targetHeight: 320,
+        destinationType: 0
+      });
+      function onSuccess(imageData) {
+        alert('onSuccess');
+        console.log("data:image/jpeg;base64,"+imageData);
+      }
 
-        }, function(err) {
-          // error
-        });
+      function onFail(message) {
+        alert('Failed because: ' + message);
+      }
     };
 
     /*var vm = this;

@@ -36,13 +36,13 @@ md-table-container{
 }
 
 .about, .appartment, .traveller, .checkin{
-  background-color: #FF9100;
+  background-color: #0a9dc7;
   padding: 2px;
   margin-bottom: 5px;
 }
 .about_mission, .appartment_mission, .traveller_mission{
   padding: 2%;
-  background-color: #FFD180;
+  background-color: #FFF;
 }
 
 @media screen and (max-width: 640px){
